@@ -1,5 +1,9 @@
 # django-api
 
+
+[![Build Status](https://travis-ci.org/NetoDevel/django-api.svg?branch=master)](https://travis-ci.org/NetoDevel/django-api)
+[![Coverage Status](https://coveralls.io/repos/github/NetoDevel/django-api/badge.svg?branch=master)](https://coveralls.io/github/NetoDevel/django-api?branch=master)
+
 # Requeriments
 
 ```
