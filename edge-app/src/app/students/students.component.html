@@ -1,0 +1,36 @@
+<p>
+  Exibindo {{ student.length }} alunos.
+</p>
+
+<table>
+  <thead>
+  <tr>
+    <th data-field="name">Nome</th>
+    <th data-field="registry">Matricula</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.name }}</td>
+      <td>{{ student.registry }}</td>
+
+      <td>
+        <a [routerLink]="['/students', student.id]">
+          Editar
+        </a>
+      </td>
+      <td>
+        <a (click)="deleteStudent(student)" href="">
+          Deletar
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="bottom: 45px; right: 24px;">
+  <a routerLink="/students/new">
+    Novo Aluno
+  </a>
+</div>

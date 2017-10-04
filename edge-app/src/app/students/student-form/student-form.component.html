@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>{{ title }}</h1>
+    <form (ngSubmit)="save()">
+      <div>
+        <label for="name">Nome</label>
+        <input type="text" id="title" required [(ngModel)]="student.name" name='name'>
+      </div>
+      <div>
+        <label for="registry">Registry</label>
+        <input type="text" id="registry" required [(ngModel)]="student.registry" name='registry'>
+      </div>
+      <div>
+        <label for="name">Period</label>
+        <input type="text" id="period" required [(ngModel)]="student.period" name='period'>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <hr />
+    <a routerLink="/">Voltar para listagem de alunos</a>
+</div>
