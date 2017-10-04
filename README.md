@@ -1,5 +1,8 @@
 # django-api
 
+
+[![Build Status](https://travis-ci.org/NetoDevel/django-api.svg?branch=master)](https://travis-ci.org/NetoDevel/django-api)
+
 # Requeriments
 
 ```
