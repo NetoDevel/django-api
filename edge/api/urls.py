@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import url
-from . import views
+from .controllers import students_controller
 
 urlpatterns = [
-    url(
+	url(
         r'^api/v1/students/(?P<pk>[0-9]+)$',
-        views.get_delete_update_student,
-        name='get_delete_update_student'
+        students_controller.get_delete_update_students,
+        name='get_delete_update_students'
     ),
+
     url(
         r'^api/v1/students/$',
-        views.index,
-        name='index'
+        students_controller.get_post_students,
+        name='get_post_students'
     )
 ]
