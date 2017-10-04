@@ -1,1 +1,10 @@
 # django-api
+
+# Requeriments
+
+```
+Django==1.11.5
+djangorestframework==3.6.4
+psycopg2==2.7.1
+```
+
