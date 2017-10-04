@@ -4,3 +4,11 @@ services:
     build: edge-app
     ports:
       - "4200:4200"
+  nginx:
+    build: nginx
+    links:
+      - angular-client
+    ports:
+      - "80:80"
+    depends_on:
+      - angular-client
