@@ -8,4 +8,5 @@ class Student(models.Model):
 	registry = models.CharField("registry", max_length=255)
 	name = models.CharField("name", max_length=255)
 	period = models.CharField("period", max_length=255)
-		
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True)
