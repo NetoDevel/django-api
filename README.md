@@ -6,9 +6,36 @@
 
 # Requeriments
 
+* Django
+* djangorestframework
+* django-cors-headers
+* psycopg2
+* pytz
+
+# Usage
+### if you use docker, run:
 ```
-Django==1.11.5
-djangorestframework==3.6.4
-psycopg2==2.7.1
+docker-compose build
+docker-compose up
+
+docker-compose run api python manage.py migrate
+```
+### for users without docker:
+
+Application AngularJS
+```
+cd edge-app/
+ng server
 ```
 
+API Django
+
+```
+cd edge
+./manage.py runserver
+```
+
+run tests
+```
+./manage.py test
+```
