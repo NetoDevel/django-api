@@ -33,26 +33,26 @@ urlpatterns = [
 	url(
         r'^api/v1/subjects/(?P<pk>[0-9]+)$',
         discipline_controller.get_delete_update_discipline,
-        name='get_delete_update_students'
+        name='get_delete_update_discipline'
     ),
     url(
         r'^api/v1/subjects/$',
         discipline_controller.get_post_discipline,
-        name='get_post_students'
+        name='get_post_discipline'
     ),
 	url(
         r'^api/v1/subjects/add_schedule$',
         discipline_controller.add_schedule,
-        name='get_post_students'
+        name='add_schedule'
     ),
 	url(
         r'^api/v1/subjects/(?P<pk>[0-9]+)/view_schedules$',
         discipline_controller.view_schedules,
-        name='get_post_students'
+        name='view_schedules'
     ),
 	url(
         r'^api/v1/subjects/(?P<pk>[0-9]+)/students$',
         discipline_controller.get_students,
-        name='get_post_students'
+        name='get_students'
     )
 ]

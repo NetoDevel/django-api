@@ -10,6 +10,6 @@ class StudentTest(TestCase):
 
 	def test_data_student(self):
 		student_jose = Student.objects.get(name='José Vieira')
-		
+
 		self.assertEqual(student_jose.registry, '001')
 		self.assertEqual(student_jose.period, '1')
