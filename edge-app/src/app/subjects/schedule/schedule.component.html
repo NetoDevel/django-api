@@ -1,0 +1,25 @@
+<p>
+  Exibindo {{ schedules.length }} horários.
+</p>
+
+<h1>Horários</h1>
+<br />
+<table class="table table-condensed table-hover">
+  <thead>
+  <tr>
+    <th data-field="name">Hora inicio</th>
+    <th data-field="menu">Hora Fim</th>
+    <th data-field="code">Dia</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let schedule of schedules">
+      <td>{{ schedule.start_time }}</td>
+      <td>{{ schedule.end_time }}</td>
+      <td>{{ schedule.day}}</td>
+    </tr>
+  </tbody>
+</table>
+
+  <a routerLink="/subjects">Voltar para listagem de diciplinas</a>

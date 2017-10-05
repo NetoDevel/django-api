@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>{{ title }}</h1>
+    <hr />
+    <form (ngSubmit)="save()" class="form-horizontal">
+
+      <div class="form-group">
+        <label for="start_time" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Hora inicio</label>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <input type="text" id="start_time" name="start_time" required [(ngModel)]="schedule.start_time" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="end_time" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Hora fim</label>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <input type="text" id="end_time" name="end_time" required [(ngModel)]="schedule.end_time" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="day" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Dia da semana</label>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <input type="text" id="day" name="day" required [(ngModel)]="schedule.day" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">
+          <button class="btn btn-success" type="submit">Salvar</button>
+        </div>
+      </div>
+
+    </form>
+    <hr />
+    <a routerLink="/subjects">Voltar para listagem de diciplinas</a>
+</div>

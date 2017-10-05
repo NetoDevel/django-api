@@ -27,7 +27,11 @@
       <td>{{ subject.work_load }}</td>
 
       <td>
-        <a href="">
+        <a [routerLink]="['/subjects/', subject.id, 'add_schedule']" href="">
+          Adiciona horário
+        </a>
+
+        <a [routerLink]="['/subjects/', subject.id, 'view_schedules']" href="" style="margin-left:2%;">
           Ver Horários
         </a>
 
