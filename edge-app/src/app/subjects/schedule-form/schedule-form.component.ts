@@ -13,6 +13,7 @@ export class ScheduleFormComponent implements OnInit {
 
   title: string;
   schedule: Schedule = new Schedule();
+  mask = [/[0-9]/, /[0-9]/, ':', /[0-9]/, /[0-9]/]
 
   constructor(
     private scheduleService: ScheduleService,

@@ -22,6 +22,8 @@ import { RegistryService } from './students/shared/registry.service';
 import { ListSubjectsComponent } from './students/list-subjects/list-subjects.component';
 import { ListStudentsComponent } from './subjects/list-students/list-students.component';
 
+import { TextMaskModule } from 'angular2-text-mask';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { ListStudentsComponent } from './subjects/list-students/list-students.co
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    TextMaskModule
   ],
   providers: [StudentService, SubjectService, ScheduleService, RegistryService],
   bootstrap: [AppComponent]

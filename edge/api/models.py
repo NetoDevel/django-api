@@ -18,8 +18,8 @@ class Discipline(models.Model):
 	work_load = models.IntegerField("work_load")
 
 class DisciplineSchedule(models.Model):
-	start_time = models.DateTimeField(name="start_time")
-	end_time = models.DateTimeField(name="end_time")
+	start_time = models.CharField(name="start_time", max_length = 255)
+	end_time = models.CharField(name="end_time", max_length = 255)
 	day = models.CharField(name="day", max_length = 10)
 	discipline = models.ForeignKey(Discipline, on_delete = models.CASCADE)
 
