@@ -1,6 +1,5 @@
 # django-api
 
-
 [![Build Status](https://travis-ci.org/NetoDevel/django-api.svg?branch=master)](https://travis-ci.org/NetoDevel/django-api)
 [![Coverage Status](https://coveralls.io/repos/github/NetoDevel/django-api/badge.svg?branch=master)](https://coveralls.io/github/NetoDevel/django-api?branch=master)
 
@@ -13,6 +12,12 @@
 * pytz
 
 # Usage
+
+### before
+```
+create a database 'edge'
+```
+
 ### if you use docker, run:
 ```
 docker-compose build
@@ -39,3 +44,13 @@ run tests
 ```
 ./manage.py test
 ```
+
+## Access
+
+### if you use docker
+http://localhost:80
+
+### if you dont use docker
+http://localhost:4200
+
+
