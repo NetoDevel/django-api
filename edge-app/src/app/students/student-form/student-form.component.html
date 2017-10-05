@@ -1,19 +1,35 @@
 <div class="container">
     <h1>{{ title }}</h1>
-    <form (ngSubmit)="save()">
-      <div>
-        <label for="name">Nome</label>
-        <input type="text" id="title" required [(ngModel)]="student.name" name='name'>
+    <hr />
+    <form (ngSubmit)="save()" class="form-horizontal">
+
+      <div class="form-group">
+        <label for="name" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Nome</label>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <input type="text" id="name" required [(ngModel)]="student.name" name='name' class="form-control">
+        </div>
       </div>
-      <div>
-        <label for="registry">Registry</label>
-        <input type="text" id="registry" required [(ngModel)]="student.registry" name='registry'>
+
+      <div class="form-group">
+        <label for="registry" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Matricula</label>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <input type="text" id="registry" required [(ngModel)]="student.registry" name='registry' class="form-control">
+        </div>
       </div>
-      <div>
-        <label for="name">Period</label>
-        <input type="text" id="period" required [(ngModel)]="student.period" name='period'>
+
+      <div class="form-group">
+        <label for="period" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Periodo</label>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <input type="text" id="period" required [(ngModel)]="student.period" name='period' class="form-control">
+        </div>
       </div>
-      <button type="submit">Submit</button>
+
+      <div class="form-group">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">
+          <button class="btn btn-success" type="submit">Salvar</button>
+        </div>
+      </div>
+
     </form>
     <hr />
     <a routerLink="/">Voltar para listagem de alunos</a>

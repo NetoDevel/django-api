@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class StudentService {
 
-  private url: string = "http://localhost:8000/students";
+  private url: string = "http://localhost:8000/api/v1/students";
 
   constructor(private http: Http) { }
 
@@ -24,7 +24,7 @@ export class StudentService {
   }
 
   addStudent(student){
-    return this.http.post(this.url, {'student': student})
+    return this.http.post(this.url + '/', {'student': student})
       .map(res => res.json());
   }
 
