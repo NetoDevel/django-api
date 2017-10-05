@@ -1,0 +1,44 @@
+<p>
+  Exibindo {{ subjects.length }} disciplinas.
+</p>
+
+
+<div class="page-header">
+  <a routerLink="/subjects/new" class="btn btn-outline-primary">
+    Nova Disciplina
+  </a>
+</div> <br />
+
+<table class="table table-condensed table-hover">
+  <thead>
+  <tr>
+    <th data-field="name">Nome</th>
+    <th data-field="menu">Emenda</th>
+    <th data-field="code">Código</th>
+    <th data-field="work-load">Carga horária</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let subject of subjects">
+      <td>{{ subject.name }}</td>
+      <td>{{ subject.menu }}</td>
+      <td>{{ subject.code }}</td>
+      <td>{{ subject.work_load }}</td>
+
+      <td>
+        <a href="">
+          Ver Horários
+        </a>
+
+        <a [routerLink]="['/subjects', subject.id]" style="margin-left:2%;">
+          Editar
+        </a>
+
+        <a (click)="deleteSubject(subject)" href="" style="margin-left:2%;">
+          Deletar
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

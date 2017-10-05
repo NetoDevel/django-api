@@ -9,12 +9,17 @@ import { StudentFormComponent } from './students/student-form/student-form.compo
 import { StudentService } from './students/shared/student.service';
 
 import { routing } from './app.routing';
+import { SubjectsComponent } from './subjects/subjects.component';
+import { SubjectFormComponent } from './subjects/subject-form/subject-form.component';
+import { SubjectService } from './subjects/shared/subject.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentsComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    SubjectsComponent,
+    SubjectFormComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,7 @@ import { routing } from './app.routing';
     HttpModule,
     routing
   ],
-  providers: [StudentService],
+  providers: [StudentService, SubjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

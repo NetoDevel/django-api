@@ -1,0 +1,43 @@
+<div class="container">
+    <h1>{{ title }}</h1>
+    <hr />
+    <form (ngSubmit)="save()" class="form-horizontal">
+
+      <div class="form-group">
+        <label for="name" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Nome</label>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <input type="text" id="name" required [(ngModel)]="discipline.name" name='name' class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="menu" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Emenda</label>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <input type="text" id="menu" required [(ngModel)]="discipline.menu" name='menu' class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="code" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Código</label>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <input type="text" id="code" required [(ngModel)]="discipline.code" name='code' class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="work_load" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">Carga horária</label>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <input type="text" id="work_load" required [(ngModel)]="discipline.work_load" name='code' class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">
+          <button class="btn btn-success" type="submit">Salvar</button>
+        </div>
+      </div>
+
+    </form>
+    <hr />
+    <a routerLink="/">Voltar para listagem de diciplinas</a>
+</div>

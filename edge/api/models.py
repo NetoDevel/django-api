@@ -11,3 +11,8 @@ class Student(models.Model):
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
 
+class Discipline(models.Model):
+	name = models.CharField("name", max_length = 255)
+	menu = models.CharField("menu", max_length = 255)
+	code = models.IntegerField("code")
+	work_load = models.IntegerField("work_load")
