@@ -26,7 +26,7 @@
 
       <div class="form-group">
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">
-          <button class="btn btn-success" type="submit">Salvar</button>
+          <button class="btn btn-success" type="submit" [disabled]="!schedule.start_time || !schedule.end_time || !schedule.day">Salvar</button>
         </div>
       </div>
 

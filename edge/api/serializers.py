@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Student
 from .models import Discipline
+from .models import RegistryStudent
 from .models import DisciplineSchedule
 
 class StudentSerializer(serializers.ModelSerializer):
@@ -17,3 +18,8 @@ class DisciplineScheduleSerializer(serializers.ModelSerializer):
 	class Meta(object):
 		model = DisciplineSchedule
 		fields = ('id', 'start_time', 'end_time', 'day', 'discipline_id')
+
+class RegistryStudentSerializer(serializers.ModelSerializer):
+	class Meta(object):
+		model = RegistryStudent
+		fields = ('id', 'discipline_id', 'student_id')

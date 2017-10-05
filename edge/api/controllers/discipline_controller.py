@@ -7,8 +7,11 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from ..models import Discipline
+from ..models import Student
+from ..models import RegistryStudent
 from ..models import DisciplineSchedule
 from ..serializers import DisciplineSerializer
+from ..serializers import StudentSerializer
 from ..serializers import DisciplineScheduleSerializer
 from rest_framework.parsers import JSONParser
 import json
@@ -84,4 +87,16 @@ def add_schedule(request):
 def view_schedules(request, pk):
     schedules = DisciplineSchedule.objects.filter(discipline_id = pk)
     serializer = DisciplineScheduleSerializer(schedules, many = True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def get_students(request, pk):
+    result_list = []
+    records = RegistryStudent.objects.filter(discipline_id = pk)
+
+    for i in range(len(records)):
+        student = Student.objects.get(id = records[i].student_id)
+        result_list.append(student)
+
+    serializer = StudentSerializer(result_list, many = True)
     return Response(serializer.data)

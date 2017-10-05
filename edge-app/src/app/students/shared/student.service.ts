@@ -23,6 +23,11 @@ export class StudentService {
       .map(res => res.json());
   }
 
+  getSubjects(id) {
+    return this.http.get(this.url + '/' + id + '/subjects')
+      .map(res => res.json());
+  }
+
   addStudent(student){
     return this.http.post(this.url + '/', {'student': student})
       .map(res => res.json());

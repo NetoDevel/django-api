@@ -10,9 +10,16 @@ import { SubjectFormComponent } from './subjects/subject-form/subject-form.compo
 import { ScheduleFormComponent } from './subjects/schedule-form/schedule-form.component';
 import { ScheduleComponent } from './subjects/schedule/schedule.component';
 
+import { RegistryComponent } from './students/registry/registry.component';
+import { ListSubjectsComponent } from './students/list-subjects/list-subjects.component';
+
+import { ListStudentsComponent } from './subjects/list-students/list-students.component';
+
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: StudentsComponent },
   { path: 'students/new', component: StudentFormComponent},
+  { path: 'students/registry', component: RegistryComponent},
+  { path: 'students/:id/subjects', component: ListSubjectsComponent},
   { path: 'students/:id', component: StudentFormComponent},
   { path: 'students/:id/edit', component: StudentFormComponent},
 
@@ -21,6 +28,7 @@ const appRoutes: Routes = [
   { path: 'subjects/:id', component: SubjectFormComponent},
   { path: 'subjects/:id/add_schedule', component: ScheduleFormComponent},
   { path: 'subjects/:id/view_schedules', component: ScheduleComponent},
+  { path: 'subjects/:id/students', component: ListStudentsComponent},
   { path: 'subjects/:id/edit', component: SubjectFormComponent}
 ];
 

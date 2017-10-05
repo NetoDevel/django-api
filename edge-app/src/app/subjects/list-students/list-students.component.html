@@ -1,0 +1,15 @@
+<h1> Alunos </h1>
+<br />
+<table class="table table-condensed table-hover">
+  <thead>
+  <tr>
+    <th data-field="name">Nome</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.name }}</td>
+    </tr>
+  </tbody>
+</table>

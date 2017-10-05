@@ -2,6 +2,7 @@
 from django.conf.urls import url
 from .controllers import students_controller
 from .controllers import discipline_controller
+from .controllers import registry_controller
 
 urlpatterns = [
 	# Resource STUDENTS
@@ -15,6 +16,18 @@ urlpatterns = [
         students_controller.get_post_students,
         name='get_post_students'
     ),
+	url(
+        r'^api/v1/students/(?P<pk>[0-9]+)/subjects$',
+        students_controller.get_student_subjects,
+        name='get_student_subjects'
+    ),
+
+   # Resource registry
+	url(
+		r'^api/v1/registry$',
+		registry_controller.post_registry_student,
+		name='post_registry_student'
+	),
 
 	# Resource subjects
 	url(
@@ -35,6 +48,11 @@ urlpatterns = [
 	url(
         r'^api/v1/subjects/(?P<pk>[0-9]+)/view_schedules$',
         discipline_controller.view_schedules,
+        name='get_post_students'
+    ),
+	url(
+        r'^api/v1/subjects/(?P<pk>[0-9]+)/students$',
+        discipline_controller.get_students,
         name='get_post_students'
     )
 ]

@@ -7,6 +7,9 @@
   <a routerLink="/students/new" class="btn btn-outline-primary">
     Novo Aluno
   </a>
+  <a routerLink="/students/registry" class="btn btn-outline-primary">
+    Matricular Aluno
+  </a>
 </div> <br />
 
 <table class="table table-condensed table-hover">
@@ -25,7 +28,7 @@
       <td>{{ student.registry }}</td>
       <td>{{ student.period }}</td>
       <td>
-        <a href="">
+        <a [routerLink]="['/students', student.id, 'subjects']">
           Ver diciplinas
         </a>
 

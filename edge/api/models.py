@@ -22,3 +22,7 @@ class DisciplineSchedule(models.Model):
 	end_time = models.DateTimeField(name="end_time")
 	day = models.CharField(name="day", max_length = 10)
 	discipline = models.ForeignKey(Discipline, on_delete = models.CASCADE)
+
+class RegistryStudent(models.Model):
+	student = models.ForeignKey(Student, on_delete = models.CASCADE)
+	discipline = models.ForeignKey(Discipline, on_delete = models.CASCADE)

@@ -12,9 +12,15 @@ import { routing } from './app.routing';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { SubjectFormComponent } from './subjects/subject-form/subject-form.component';
 import { SubjectService } from './subjects/shared/subject.service';
+
 import { ScheduleFormComponent } from './subjects/schedule-form/schedule-form.component';
 import { ScheduleService } from './subjects/shared/schedule.service';
 import { ScheduleComponent } from './subjects/schedule/schedule.component';
+
+import { RegistryComponent } from './students/registry/registry.component';
+import { RegistryService } from './students/shared/registry.service';
+import { ListSubjectsComponent } from './students/list-subjects/list-subjects.component';
+import { ListStudentsComponent } from './subjects/list-students/list-students.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,10 @@ import { ScheduleComponent } from './subjects/schedule/schedule.component';
     SubjectsComponent,
     SubjectFormComponent,
     ScheduleFormComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    RegistryComponent,
+    ListSubjectsComponent,
+    ListStudentsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +41,7 @@ import { ScheduleComponent } from './subjects/schedule/schedule.component';
     HttpModule,
     routing
   ],
-  providers: [StudentService, SubjectService, ScheduleService],
+  providers: [StudentService, SubjectService, ScheduleService, RegistryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

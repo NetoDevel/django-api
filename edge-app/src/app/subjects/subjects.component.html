@@ -28,7 +28,11 @@
 
       <td>
         <a [routerLink]="['/subjects/', subject.id, 'add_schedule']" href="">
-          Adiciona horário
+          Adicionar horário
+        </a>
+
+        <a [routerLink]="['/subjects/', subject.id, 'students']" href="" style="margin-left:2%;">
+          Ver Alunos
         </a>
 
         <a [routerLink]="['/subjects/', subject.id, 'view_schedules']" href="" style="margin-left:2%;">
