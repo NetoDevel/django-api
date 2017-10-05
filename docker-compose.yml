@@ -4,6 +4,7 @@ services:
     build: edge-app
     ports:
       - "4200:4200"
+
   nginx:
     build: nginx
     links:
@@ -12,3 +13,20 @@ services:
       - "80:80"
     depends_on:
       - angular-client
+
+  api:
+    build: edge
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+        - .:/edge
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    links:
+        - db
+
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
