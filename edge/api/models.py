@@ -16,3 +16,9 @@ class Discipline(models.Model):
 	menu = models.CharField("menu", max_length = 255)
 	code = models.IntegerField("code")
 	work_load = models.IntegerField("work_load")
+
+class DisciplineSchedule(models.Model):
+	start_time = models.DateTimeField(name="start_time")
+	end_time = models.DateTimeField(name="end_time")
+	day = models.CharField(name="day", max_length = 10)
+	discipline = models.ForeignKey(Discipline, on_delete = models.CASCADE)

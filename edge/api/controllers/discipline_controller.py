@@ -7,7 +7,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from ..models import Discipline
+from ..models import DisciplineSchedule
 from ..serializers import DisciplineSerializer
+from ..serializers import DisciplineScheduleSerializer
 from rest_framework.parsers import JSONParser
 import json
 
@@ -58,3 +60,28 @@ def get_post_discipline(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+def add_schedule(request):
+    data = {
+        'start_time': request.data.get('schedule')['start_time'],
+        'end_time': request.data.get('schedule')['end_time'],
+        'day': request.data.get('schedule')['day'],
+        'discipline_id' : request.data.get('schedule')['discipline_id']
+    }
+
+    discipline_id = request.data.get('schedule')['discipline_id']
+    discipline = Discipline.objects.get(pk = discipline_id)
+
+    discipline_schedule = DisciplineSchedule(start_time = data['start_time'],
+    end_time = data['end_time'], day = data['day'], discipline = discipline)
+
+    discipline_schedule.save()
+
+    return Response("success")
+
+@api_view(['GET'])
+def view_schedules(request, pk):
+    schedules = DisciplineSchedule.objects.filter(discipline_id = pk)
+    serializer = DisciplineScheduleSerializer(schedules, many = True)
+    return Response(serializer.data)
